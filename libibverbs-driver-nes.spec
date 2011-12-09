@@ -1,12 +1,12 @@
 Summary:	Userspace driver for the NetEffect Ethernet Server Cluster adapters
 Summary(pl.UTF-8):	Sterownik przestrzeni użytkownika dla kart NetEffect Ethernet Server Cluster
 Name:		libibverbs-driver-nes
-Version:	1.1.2
+Version:	1.1.3
 Release:	0.1
 License:	BSD or GPL v2
 Group:		Libraries
 Source0:	http://www.openfabrics.org/downloads/nes/libnes-%{version}.tar.gz
-# Source0-md5:	52b0ed4362d652e5a793b0f60d06fd49
+# Source0-md5:	4b1c68c1e70254ab3e686b0ea31ce147
 URL:		http://openib.org/
 BuildRequires:	libibverbs-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
