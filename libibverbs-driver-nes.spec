@@ -1,14 +1,17 @@
 Summary:	Userspace driver for the NetEffect Ethernet Server Cluster adapters
 Summary(pl.UTF-8):	Sterownik przestrzeni użytkownika dla kart NetEffect Ethernet Server Cluster
 Name:		libibverbs-driver-nes
-Version:	1.1.3
-Release:	0.1
+Version:	1.1.4
+Release:	1
 License:	BSD or GPL v2
 Group:		Libraries
 Source0:	http://www.openfabrics.org/downloads/nes/libnes-%{version}.tar.gz
-# Source0-md5:	4b1c68c1e70254ab3e686b0ea31ce147
+# Source0-md5:	c51afea009ad43924db971a3b9f0df28
 URL:		http://openib.org/
+BuildRequires:	autoconf >= 2.57
+BuildRequires:	automake
 BuildRequires:	libibverbs-devel
+BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -37,12 +40,15 @@ Statyczna wersja sterownika nes, którą można wbudować bezpośrednio
 w aplikację.
 
 %prep
-%setup -q -n libnes-%{version}
+%setup -q -n libnes
 
 %build
-# define IBV_QPT_RAW_ETH until it's in libibverbs
-%configure \
-	CPPFLAGS="%{rpmcppflags} -DIBV_QPT_RAW_ETH=7"
+%{__libtoolize}
+%{__aclocal} -I config
+%{__autoconf}
+%{__autoheader}
+%{__automake}
+%configure
 %{__make}
 
 %install
