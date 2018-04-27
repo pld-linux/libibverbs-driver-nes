@@ -1,8 +1,9 @@
+# NOTE: for version >= 17 see rdma-core.spec
 Summary:	Userspace driver for the NetEffect Ethernet Server Cluster adapters
 Summary(pl.UTF-8):	Sterownik przestrzeni użytkownika dla kart NetEffect Ethernet Server Cluster
 Name:		libibverbs-driver-nes
 Version:	1.1.4
-Release:	1
+Release:	1.1
 License:	BSD or GPL v2
 Group:		Libraries
 Source0:	http://www.openfabrics.org/downloads/nes/libnes-%{version}.tar.gz
